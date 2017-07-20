@@ -1,9 +1,3 @@
-/**
- * Tips：
- * 如果start没有配置container选项，则返回一个可渲染的组件；
- * 如果传递了container，则执行渲染。
- * */
-
 import React, { Component } from 'react';
 
 import {Provider} from 'mobx-react';
@@ -17,6 +11,12 @@ var ContainerComponent;
 var componentIns;
 var started = false;
 
+/**
+ * 如果 start 没有配置 container 选项，则返回一个可渲染的组件；
+ * 如果传递了container，则执行渲染。
+ * [middlewares description]
+ * @type {Array}
+ */
 export default({
     component,
     models,

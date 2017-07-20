@@ -26,10 +26,14 @@ start({
 });
 ```
 
+## 更多文档
+
+[关于 tinper-mox 的更多详细使用文档请移步仓库 docs 获取。](./docs/0.index.md)
+
 ## 参考资料
 
-- [mobx-roof](https://github.com/mobx-roof/mobx-roof)
-- [vanex](https://github.com/abell123456/vanex)
+`tinper-mox` 的实现部分参考自 `mobx-roof & vanex`，结合项目需要支持数据层的扩展和路由的控制。
+
 
 ## 协议
 
