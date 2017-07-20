@@ -1,7 +1,7 @@
 import * as mobx from 'mobx';
 import * as mobxReact from 'mobx-react';
 
-import Mox, { addModel } from './mox';
+import createMoxApp, { addModel } from './mox';
 
 import Relation from './relation';
 import createModel from './model/create';
@@ -17,7 +17,7 @@ export default {
     ...mobxReact,
     createModel,
     extendModel,
-    Mox,
+    createMoxApp,
     Relation,
     addModel
 };

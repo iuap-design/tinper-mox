@@ -9,7 +9,7 @@ import React from 'react';
 import App from './App';
 
 import {
-    Mox,
+    createMoxApp,
 } from 'tinper-mox';
 
 // 引入 model
@@ -17,7 +17,7 @@ import user from './models/User';
 import todos from './models/Todos';
 
 // 创建应用
-Mox({
+createMoxApp({
     component: App,
     container: '#app',
     models: {
