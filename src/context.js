@@ -9,8 +9,10 @@ import MobxModel, {isMobxModelClass} from './model/model-base';
 import {each, isObject, mapValues} from './utils';
 
 import MobxRelation from './relation';
-import createModel from './model/create-model';
-import globalMiddleware from './middleware/create-compose-middleware';
+import createModel from './model/create';
+import ComposeMiddleware from './middleware/compose-middleware';
+
+const globalMiddleware = new ComposeMiddleware
 
 export default class MobxContext {
     /**

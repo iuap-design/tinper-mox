@@ -1,26 +1,15 @@
 import Middleware from './middleware';
 import {
     isRegExp,
-    mapValues
+    mapValues,
+    toFilter
 } from '../utils';
 
 const KEYS = ['before', 'after', 'error', 'filter'];
 
-function toFilter(filter) {
-    if (isRegExp(filter)) {
-        return ({
-            type
-        }) => filter.test(type);
-    } else if (typeof filter === 'string') {
-        return ({
-            type
-        }) => filter === type;
-    } else if (typeof filter === 'function') {
-        return filter;
-    }
-    throw new TypeError('[ComposeMiddleware] Middleware filter must be RegExp, String or Function.');
-}
-
+/**
+ *
+ */
 export default class ComposeMiddleware {
     static toStandardMiddleware(_middleware = {}) {
         if (typeof _middleware === 'function') {

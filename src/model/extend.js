@@ -1,4 +1,4 @@
-import createModel from './create-model';
+import createModel from './create';
 
 import {
     isObject,

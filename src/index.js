@@ -4,8 +4,10 @@ import * as mobxReact from 'mobx-react';
 import start, { addModel } from './start';
 
 import Relation from './relation';
-import createModel from './model/create-model';
-import extendModel from './model/extend-model';
+import createModel from './model/create';
+import extendModel from './model/extend';
+
+import router from './router'
 
 /**
  * Top APIs
@@ -17,5 +19,6 @@ export default {
     extendModel,
     start,
     Relation,
-    addModel
+    addModel,
+    router
 };

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Provider} from 'mobx-react';
 import VanexContext from './context';
 import VanexRelation from './relation';
-import middleware from './middleware/create-compose-middleware';
+import ComposeMiddleware from './middleware/compose-middleware';
 import {render} from 'react-dom';
 
 var context;
@@ -11,6 +11,7 @@ var ContainerComponent;
 var componentIns;
 var started = false;
 
+let middleware = new ComposeMiddleware
 /**
  * 如果 start 没有配置 container 选项，则返回一个可渲染的组件；
  * 如果传递了container，则执行渲染。

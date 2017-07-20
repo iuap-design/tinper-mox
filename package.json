@@ -1,10 +1,16 @@
 {
   "name": "tinper-mox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "基于 Mobx 的 MVVM 范式应用状态管理框架",
   "main": "./index.js",
   "scripts": {
-    "build": "rimraf lib && babel src --out-dir lib --watch"
+    "dev": "rimraf lib && babel src --out-dir lib --watch",
+    "test": "npm run lint && cross-env NODE_ENV=test nyc mocha --no-timeouts",
+    "debug": "mocha --require babel-register --require ./test/setup.js --no-timeouts",
+    "build": "rimraf lib && babel src --out-dir lib",
+    "lint": "eslint --ext .js src test",
+    "report": "nyc report --reporter=html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "private": false,
   "preferGlobal": true,
