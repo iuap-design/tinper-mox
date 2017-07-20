@@ -1,12 +1,13 @@
 import React, {
-    Component,
-    PropTypes
+    Component
 } from 'react';
+import PropTypes from 'prop-types';
+
 import {
     addModel,
     inject,
     observer,
-} from '../../lib';
+} from 'tinper-mox';
 
 import newAdded from '../models/newAdded';
 
@@ -34,9 +35,10 @@ export default class UserLogin extends Component {
 
         return (
             <div className="container">
+              <h1> 请输入：</h1>
                 <div>
-                    username:<input ref="username" type="text" placeholder="Jack"/>
-                    password:<input ref="password" type="password" placeholder="123"/>
+                    用户名:<input ref="username" type="text" placeholder="Jack"/>
+                    密码:<input ref="password" type="password" placeholder="123"/>
                     <button onClick={::this.login}>login</button>
                     {
                         loginLoading

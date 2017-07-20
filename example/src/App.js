@@ -1,24 +1,18 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // components
 import UserLogin from './components/UserLogin';
 import UserDetail from './components/UserDetail';
 import Todos from './components/Todos';
 
-import {
-    inject,
-    observer,
-} from '../lib';
+import { inject, observer } from 'tinper-mox';
 
 @inject('user')
 @observer
 export default class App extends Component {
     render() {
-        // const user = this.props.user.toJSON();
-        console.log(this.props.user.toJSON());
         const {user} = this.props;
-
-        console.log('user.isLogin:', user.isLogin);
 
         if (user.isLogin !== true) {
             return <UserLogin />;

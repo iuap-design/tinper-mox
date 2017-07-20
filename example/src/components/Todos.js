@@ -1,11 +1,12 @@
 import React, {
-    Component,
-    PropTypes
+    Component
 } from 'react';
+import PropTypes from 'prop-types';
+
 import {
     observer,
     inject,
-} from '../../lib';
+} from 'tinper-mox';
 import TodoItem from './TodoItem';
 
 @inject('todos')

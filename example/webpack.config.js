@@ -4,7 +4,7 @@ const webpack = require('atool-build/lib/webpack');
 
 module.exports = function(webpackConfig) {
     webpackConfig.entry = {
-        'index': './index.js'
+        'index': './src/index.js'
     };
 
     webpackConfig.output.path = path.join(__dirname, './dist');
@@ -29,3 +29,7 @@ module.exports = function(webpackConfig) {
 
     return webpackConfig;
 };
+
+// module.exports = function(env) {
+//   return require(`./config/webpack.${env}.js`)
+// }

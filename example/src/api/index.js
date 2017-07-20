@@ -10,7 +10,13 @@ const userDB = [{
     habits: ['football'],
     password: '123',
     id: '2'
-}, ];
+}, {
+    username: 'guoyff',
+    from: 'Chinese',
+    habits: ['football'],
+    password: '123',
+    id: '2'
+} ];
 
 const todosDB = [{
     userId: '2',

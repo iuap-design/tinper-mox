@@ -1,5 +1,5 @@
 import * as api from '../api';
-const STORE_KEY = 'vanex';
+const STORE_KEY = 'tinper-mox';
 
 export default {
     name: 'New',

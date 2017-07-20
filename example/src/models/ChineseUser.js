@@ -1,6 +1,6 @@
 import {
     extendModel
-} from '../../lib';
+} from 'tinper-mox';
 import User from './User';
 
 export default extendModel(User, {

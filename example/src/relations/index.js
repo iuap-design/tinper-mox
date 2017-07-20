@@ -1,6 +1,4 @@
-import {
-    Relation
-} from '../../lib';
+import { Relation } from 'tinper-mox';
 
 const relation = new Relation({
     filters: {

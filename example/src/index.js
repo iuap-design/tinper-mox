@@ -7,7 +7,7 @@ import relation from './relations';
 import { render } from 'react-dom';
 import {
     start,
-} from '../lib';
+} from 'tinper-mox';
 import todos from './models/Todos';
 // model
 import user from './models/User';

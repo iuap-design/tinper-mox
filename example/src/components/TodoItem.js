@@ -1,10 +1,10 @@
 import React, {
-    Component,
-    PropTypes
+    Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
     observer
-} from '../../lib';
+} from 'tinper-mox';
 import TodoItemModel from '../models/TodoItem';
 
 @observer

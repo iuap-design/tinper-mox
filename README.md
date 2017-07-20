@@ -9,16 +9,17 @@ import React from 'react';
 import App from './App';
 
 import {
-    start,
+    Mox,
 } from 'tinper-mox';
 
-// model
+// 引入 model
 import user from './models/User';
 import todos from './models/Todos';
 
-start({
+// 创建应用
+Mox({
     component: App,
-    container: '#root',
+    container: '#app',
     models: {
         user,
         todos
