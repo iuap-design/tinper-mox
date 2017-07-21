@@ -35,9 +35,13 @@ createMoxApp({
 });
 ```
 
-## 更多文档
+## 使用文档
 
 [关于 tinper-mox 的更多详细使用文档请移步仓库 docs 获取。](./docs/0.index.md)
+
+## 最佳实践
+
+[create-mox-app-boilerplate](https://github.com/iuap-design/create-mox-app-boilerplate)
 
 ## 参考资料
 
