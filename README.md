@@ -1,5 +1,11 @@
 # Mox
 
+[![npm version](https://img.shields.io/npm/v/tinper-mox.svg)](https://www.npmjs.com/package/tinper-mox)
+[![Build Status](https://img.shields.io/travis/iuap-design/tinper-mox/master.svg)](https://travis-ci.org/iuap-design/tinper-mox)
+[![devDependency Status](https://img.shields.io/david/dev/iuap-design/tinper-mox.svg)](https://david-dm.org/iuap-design/tinper-mox#info=devDependencies)
+[![NPM downloads](http://img.shields.io/npm/dm/tinper-mox.svg?style=flat)](https://npmjs.org/package/tinper-mox)
+
+
 `Mox` 是一个基于 `mobx & mobx-react` 的 应用状态管理框架，遵循清晰简单的 `MVVM` 架构模式和开发体验。
 
 ## 快速上手示例
