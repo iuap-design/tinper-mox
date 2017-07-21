@@ -9,8 +9,6 @@ import createModel from './model/create';
 import extendModel from './model/extend';
 import addModel from './model/add';
 
-// import router from './router'
-
 /**
  * Top APIs
  */

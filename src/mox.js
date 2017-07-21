@@ -7,12 +7,12 @@ import MoxRelation from './relation';
 
 import ComposeMiddleware from './middleware/compose-middleware';
 
-let ContainerComponent;
-let middleware = new ComposeMiddleware
+var ContainerComponent;
+var middleware = new ComposeMiddleware
 
-export let context;
-export let componentIns;
-export let started = false;
+export var context;
+export var componentIns;
+export var started = false;
 
 /**
  * 如果 start 没有配置 container 选项，则返回一个可渲染的组件；
@@ -44,6 +44,28 @@ export default({
         relation,
     });
 
+    /**
+     * MoxExecComponent 由 Provider 容器组件包裹的可执行组件
+     * Params:
+     *  componentIns
+     *  ContainerComponent
+     */
+    class MoxExecComponent extends Component {
+        constructor(props, context) {
+            super(props, context);
+
+            componentIns = this;
+        }
+
+        render() {
+            return (
+                <Provider ref="provider" {...context.data}>
+                    <ContainerComponent {...this.props.data} />
+                </Provider>
+            );
+        }
+    }
+
     let containerEl = container;
 
     /**
@@ -60,25 +82,3 @@ export default({
         return MoxExecComponent;
     }
 };
-
-/**
- * MoxExecComponent 由 Provider 容器组件包裹的可执行组件
- * Params:
- *  componentIns
- *  ContainerComponent
- */
-class MoxExecComponent extends Component {
-    constructor(props, context) {
-        super(props, context);
-
-        componentIns = this;
-    }
-
-    render() {
-        return (
-            <Provider ref="provider" {...context.data}>
-                <ContainerComponent {...this.props.data} />
-            </Provider>
-        );
-    }
-}

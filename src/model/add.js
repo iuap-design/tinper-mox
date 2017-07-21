@@ -10,20 +10,6 @@ import {
  * @param {Function} callback [description]
  */
 export function addModel(models, callback) {
-  // if(typeof callback == 'function') callback()
-  //
-  // if(typeof callback == 'object') {
-  //   let  = callback;
-  // }
-  //
-  // if((typeof callback == 'function') && contextArg ) {
-  //   let {
-  //     started,
-  //     context,
-  //     componentIns
-  //   } = contextArg;
-  // }
-
   // 必须先执行初始化
   if(!started) {
       throw new Error('[Mox Tips]: 请先初始化你的应用!');
