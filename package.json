@@ -1,6 +1,6 @@
 {
   "name": "tinper-mox",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "基于 Mobx 的 MVVM 范式应用状态管理框架",
   "main": "./index.js",
   "scripts": {
@@ -23,7 +23,8 @@
     "mobx": "^3.x",
     "mobx-react": "^4.x",
     "react": "^15.x",
-    "react-dom": "^15.x"
+    "react-dom": "^15.x",
+    "react-router": "^4.x"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

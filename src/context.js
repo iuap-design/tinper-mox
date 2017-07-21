@@ -8,13 +8,13 @@
 import MobxModel, {isMobxModelClass} from './model/model-base';
 import {each, isObject, mapValues} from './utils';
 
-import MobxRelation from './relation';
+import Relation from './relation';
 import createModel from './model/create';
 import ComposeMiddleware from './middleware/compose-middleware';
 
 const globalMiddleware = new ComposeMiddleware
 
-export default class MobxContext {
+export default class Context {
     /**
      * @param {Object} models
      * @param {Object} opts
@@ -24,7 +24,7 @@ export default class MobxContext {
      */
     constructor(models = {}, opts = {}) {
         this._middleware = opts.middleware || globalMiddleware;
-        this._relation = opts.relation || new MobxRelation;
+        this._relation = opts.relation || new Relation;
         this._models = {};
 
         this.models = models;

@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'mobx-react';
 
-import {Provider} from 'mobx-react';
-import VanexContext from './context';
-import VanexRelation from './relation';
+import MoxContext from './context';
+import MoxRelation from './relation';
+
 import ComposeMiddleware from './middleware/compose-middleware';
-import {render} from 'react-dom';
 
-var context;
-var ContainerComponent;
-var componentIns;
-var started = false;
-
+let ContainerComponent;
 let middleware = new ComposeMiddleware
+
+export let context;
+export let componentIns;
+export let started = false;
+
 /**
  * 如果 start 没有配置 container 选项，则返回一个可渲染的组件；
  * 如果传递了container，则执行渲染。
@@ -23,7 +25,7 @@ export default({
     models,
     container,
     middlewares = [],
-    relation = new VanexRelation
+    relation = new MoxRelation
 }) => {
     started = true;
 
@@ -37,54 +39,46 @@ export default({
         middleware.use(item);
     });
 
-    context = new VanexContext(models, {
+    context = new MoxContext(models, {
         middleware,
         relation,
     });
 
-    // 否则返回可执行组件
-    class VanexComponent extends Component {
-        constructor(props, context) {
-            super(props, context);
-
-            componentIns = this;
-        }
-
-        render() {
-            return (
-                <Provider ref="provider" {...context.data}>
-                    <ContainerComponent {...this.props.data} />
-                </Provider>
-            );
-        }
-    }
-
-
     let containerEl = container;
 
+    /**
+     * 如果传递了容器(选择器)，则执行 React 的 render 进行渲染
+     * 否则直接返回一个由 Provider 包裹后的 MoxExecComponent 组件
+     */
     if(containerEl) {
-        // 如果传递了容器(选择器)，则执行渲染
         if (typeof(container) === 'string') {
             containerEl = document.querySelector(container);
         }
 
-        render(<VanexComponent />, containerEl);
+        render(<MoxExecComponent />, containerEl);
     } else {
-        return VanexComponent;
+        return MoxExecComponent;
     }
 };
 
-// 初始化后再添加model
-export function addModel(models, callback) {
-    // 必须先执行初始化
-    if(!started) {
-        throw new Error('[vanex]: Init your app first!');
+/**
+ * MoxExecComponent 由 Provider 容器组件包裹的可执行组件
+ * Params:
+ *  componentIns
+ *  ContainerComponent
+ */
+class MoxExecComponent extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        componentIns = this;
     }
 
-    // 将models添加进context
-    context.addModel(models);
-
-    // 将context的data传递给ContainerComponent及其子组件
-    // 目前是通过执行重新渲染的机制实现，考虑优化
-    componentIns.forceUpdate(callback);
+    render() {
+        return (
+            <Provider ref="provider" {...context.data}>
+                <ContainerComponent {...this.props.data} />
+            </Provider>
+        );
+    }
 }
