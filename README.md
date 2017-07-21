@@ -18,12 +18,14 @@ import todos from './models/Todos';
 
 // 创建应用
 createMoxApp({
-    component: App,
-    container: '#app',
+    component: App,  // Root Component
+    container: '#app',  // DOM Container
     models: {
         user,
         todos
-    }
+    },  // models
+    middlewares,
+    relation
 });
 ```
 
