@@ -9,7 +9,7 @@ import {
  * @param {[type]}   models   [description]
  * @param {Function} callback [description]
  */
-export function addModel(models, callback) {
+export default function addModel(models, callback) {
   // 必须先执行初始化
   if(!started) {
       throw new Error('[Mox Tips]: 请先初始化你的应用!');

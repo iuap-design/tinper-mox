@@ -1,6 +1,6 @@
 import * as mobx from 'mobx';
 import * as mobxReact from 'mobx-react';
-import * as reactRouter from 'react-router';
+// import { Router, Route, createHistory } from 'react-router';
 
 import createMoxApp from './mox';
 import Relation from './relation';
@@ -15,7 +15,7 @@ import addModel from './model/add';
 export default {
     ...mobx,
     ...mobxReact,
-    ...reactRouter,
+    // ...reactRouter,
     createModel,
     extendModel,
     createMoxApp,
