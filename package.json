@@ -1,6 +1,6 @@
 {
   "name": "tinper-mox",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "基于 Mobx 的 MVVM 范式应用状态管理框架",
   "main": "./index.js",
   "scripts": {
