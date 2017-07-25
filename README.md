@@ -6,7 +6,8 @@
 [![NPM downloads](http://img.shields.io/npm/dm/tinper-mox.svg?style=flat)](https://npmjs.org/package/tinper-mox)
 
 
-`Mox` 是一个基于 `mobx & mobx-react` 的 应用状态管理框架，遵循清晰简单的 `MVVM` 架构模式和开发体验。
+`Mox` 是一个基于 `mobx & mobx-react` 的 应用状态管理框架，遵循清晰简单的 `MVVM` 架构模式和开发体验，它将开源方案进一步封装之后可以开箱即用，性能更高。
+
 
 ## 快速上手示例
 
@@ -29,8 +30,8 @@ createMoxApp({
     models: {
         user,
         todos
-    },  // models
-    middlewares,
+    },  
+    middlewares, 
     relation
 });
 ```
